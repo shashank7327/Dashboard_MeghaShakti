@@ -3,9 +3,7 @@
 District-level monsoon, drought and crop-stress intelligence for all 791
 districts of India.
 
-I built this during my internship at Provenance Agri Supply Chain Solutions,
-Gurugram, between 8 June and 8 August 2026. This repository holds the whole
-thing: the data pipeline, the models, the indices and the dashboard.
+
 
 ---
 
