@@ -1,0 +1,27 @@
+{
+ "registry_units": 791,
+ "grids": {
+  "rain": {
+   "lat0": 6.5,
+   "lon0": 66.5,
+   "step": 0.25,
+   "nlat": 129,
+   "nlon": 135,
+   "direct": 757,
+   "snapped": 34,
+   "covered": 791,
+   "total": 791
+  },
+  "temp": {
+   "lat0": 7.5,
+   "lon0": 67.5,
+   "step": 1.0,
+   "nlat": 31,
+   "nlon": 31,
+   "direct": 251,
+   "snapped": 540,
+   "covered": 791,
+   "total": 791
+  }
+ }
+}
