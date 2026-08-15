@@ -1,0 +1,34 @@
+# MonsoonCast — Python dependencies
+#
+# Install with:   py -3.13 -m pip install -r requirements.txt
+#
+# Versions are the ones this system was built and tested against. They are
+# pinned with >= rather than == so a newer patch release is allowed; if
+# something breaks after an upgrade, pin the exact version shown here.
+
+# --- core data handling -----------------------------------------------------
+pandas>=3.0.3
+numpy>=2.5.0
+scipy>=1.18.0
+
+# --- models -----------------------------------------------------------------
+scikit-learn>=1.9.0
+xgboost>=3.3.0
+lightgbm>=4.7.0
+
+# --- geometry: district polygons and the grid-to-district crosswalks --------
+# pyshp reads the shapefile, shapely does the polygon/grid-cell intersection
+pyshp>=3.1.5
+shapely>=2.1.2
+
+# --- data acquisition -------------------------------------------------------
+requests>=2.34.2          # NOAA / CPC / PSL index downloads
+imdlib>=0.1.21            # IMD gridded rainfall and temperature
+ecmwf-opendata>=0.3.31    # ECMWF ENS forecast
+xarray>=2026.7.0          # gridded array handling
+cfgrib>=0.9.15.1          # reads the ECMWF GRIB2 files
+eccodes>=2.47.0           # the binary backend cfgrib needs
+
+# --- spreadsheet exports ----------------------------------------------------
+openpyxl>=3.1.5
+XlsxWriter>=3.2.9

@@ -1,0 +1,73 @@
+# MonsoonCast — what belongs in Git and what does not
+#
+# THE RULE: code, documentation and small reference data are tracked. Anything
+# downloaded from a provider, and anything a script can regenerate, is not.
+#
+# This is not tidiness. The full working dataset is about 18 GB and individual
+# files exceed GitHub's 100 MB hard limit, so a repository tracking the data
+# could not be pushed at all. docs/02_DATA_EXTRACTION.md documents how to
+# obtain or rebuild every ignored dataset, which is what makes ignoring it safe
+# rather than lossy.
+
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# --- Node / Vite ------------------------------------------------------------
+node_modules/
+dist/
+.vite/
+
+# --- Editor and OS ----------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.bak
+*.tmp
+~$*
+
+# --- Downloaded source data -------------------------------------------------
+# Re-fetch with the commands in docs/02_DATA_EXTRACTION.md
+IMD_Data/raw/
+IMD_Data/lgd/
+IMD_Data/*.pkl
+IMD_Data/*.log
+Evapotranspiration_LGD/*.csv
+SM_LGD/*.csv
+TemperatureERA5_LGD/*.csv
+Vegetation_LGD/*.csv
+Chirps_LGD/*.csv
+CFSv2_LGD/*.csv
+GlobalIrrigation/*.csv
+ECMWF_LGD/
+UPAJ/
+
+# --- Generated output -------------------------------------------------------
+# All rebuilt by build_dashboard.py
+v5/data/
+v5/data_lgd/
+v5/masters_lgd/
+v5/dashboard_lgd/
+v5/dashboard_react/src/data/
+
+# --- Large binaries ---------------------------------------------------------
+*.pkl
+*.joblib
+*.pt
+*.parquet
+*.grib2
+*.grd
+
+# ---------------------------------------------------------------------------
+# TRACKED ON PURPOSE. These negations must come last to override the patterns
+# above. Without them the district registry and the map geometry would be
+# ignored, and the build could not start on a fresh clone.
+# ---------------------------------------------------------------------------
+!IMD_Data/registry_lgd791.csv
+!IMD_Data/crosswalk_*.csv
+!IMD_Data/*.json
+!IMD_Data/lgd_shapefile/
+!dashboard/
+!.gitkeep
